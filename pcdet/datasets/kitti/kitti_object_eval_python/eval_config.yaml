@@ -1,0 +1,47 @@
+
+# eval_metric_names: ["MAX_ANGLE", "MAX_DISTANCE", "MAX_POINTS", "MAX_SIZE"]
+eval_metric_names: ["MAX_DISTANCE","MAX_ANGLE"]
+
+metric_filter_map: {
+  "MAX_DISTANCE":"clean_data_by_distance",
+  "MAX_POINTS":"clean_data_by_points",
+  "MAX_SIZE":"clean_data_by_size",
+  "MAX_ANGLE":"clean_data_by_angle",
+}
+
+class_to_name: {
+  "0":'Car', 
+  "1":'Pedestrian', 
+  "2":'Cyclist',
+}
+
+eval_params: {
+    "car": {
+        "IOU": [0.7,0.5,0.3],
+        "metric": {
+            "MAX_DISTANCE":[0, 10, 20, 30, 40, 50, 60, 70],
+            "MAX_POINTS":[0, 200, 500, 2000, 4000, 8000],
+            "MAX_SIZE": [0,10,20,30],
+            "MAX_ANGLE": [-3.1415926,-1.5707963,0,1.5707963,3.1415926]
+        }
+    },
+    "pedestrian": {
+        "IOU": [0.5,0.35,0.2],
+        "metric": {
+            "MAX_DISTANCE":[0, 10, 20, 30, 40, 50, 60, 70],
+            "MAX_POINTS":[0, 200, 500, 2000, 4000, 8000],
+            "MAX_SIZE": [0, 10,20,30],
+            "MAX_ANGLE": [-3.1415926,-1.5707963,0,1.5707963,3.1415926]
+        }
+    },
+    "cyclist": {
+        "IOU": [0.5,0.35,0.2],
+        "metric": {
+            "MAX_DISTANCE":[0, 10, 20, 30, 40, 50, 60, 70],
+            "MAX_POINTS":[0, 200, 500, 2000, 4000, 8000],
+            "MAX_SIZE": [0, 10,20,30],
+            "MAX_ANGLE": [-3.1415926,-1.5707963,0,1.5707963,3.1415926]
+        }
+    }
+}
+
